@@ -1,0 +1,4 @@
+To set specific bit -->  x|=(1<<n)
+To clear specific bit --> x &= ~(1<<n)
+To toggle specific bit --> x ^= (1<<n)
+To read specific bit --> bit = (num >> n) & 1
