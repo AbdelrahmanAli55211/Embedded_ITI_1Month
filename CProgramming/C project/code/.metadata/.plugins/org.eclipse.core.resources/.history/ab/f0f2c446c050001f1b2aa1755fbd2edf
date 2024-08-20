@@ -1,0 +1,252 @@
+/*
+ * fun.c
+ *
+ *  Created on: Jul 31, 2024
+ *      Author: DELL
+ */
+#include "fun.h"
+#include "stdio.h"
+#include "STD_Types.h"
+#include "macros.h"
+
+patient arr[50];
+slot slot_arr[5]={{"2pm to 2:30 pm",1},{"2:30 pm to 3 pm",2},{"3 pm to 3:30 pm",3},{"4 pm to 4:30 pm",4},{"4:30 pm to 5 pm",5}};
+u32 forbidden_slot[5],slot_count;
+void adminmode(void)
+{
+	u32 op,check=1;
+	while(check)
+	{
+		Dprintf("\n\tAdmin Function");
+		Dprintf("\n1:Add new patient\n2:Edit Patient Record\n3:Reserve a slot with the doctor\n4:Cancel reservation\n5:Exit")
+		Dprintf("\nEnter a choice: ");
+		scanf("%d",&op);
+		switch(op)
+		{
+		case 1:
+		{
+			Addnewpatient();
+		}
+		break;
+		case 2:
+		{
+			Editpatient();
+		}
+		break;
+		case 3:
+		{
+			Reserveslot();
+		}
+		break;
+		case 4:
+		{
+			Cancelslot();
+		}
+		break;
+		case 5:
+		{
+			check=0;
+		}
+		break;
+		default:
+		{
+			Dprintf("\nWrong option please try again");
+		}
+		}
+	}
+}
+
+void usermode(void)
+{
+	int x=0;
+}
+
+void Addnewpatient(void)
+{
+	u32 count,id,i;
+	count=count_patient();
+	Dprintf("\nEnter the patient name: ");
+	scanf("%s",arr[count].name);
+	while(1)
+	{
+		Dprintf("\nEnter the patient id: ");
+		scanf("%d",&id);
+		for( i=0;i<count;i++)
+		{
+			if(arr[i].id == id)
+			{
+				Dprintf("\nThis id is already used try another one");
+				break;
+			}
+		}
+		if(i==count)
+		{
+			arr[count].id=id;
+			break;
+		}
+
+	}
+	Dprintf("\nEnter the patient gender: ");
+	scanf("%c",&arr[count].gender);
+	Dprintf("\nEnter the patient age: ");
+	scanf("%d",&arr[count].age);
+	Dprintf("\n\tAvailable Patients")
+	for(i=0;i<count+1;i++)
+	{
+		Dprintf("\n\tPatient %d",i+1);
+		Dprintf("\nName=%s",arr[i].name);
+		Dprintf("\nAge=%d",arr[i].age);
+		Dprintf("\nID=%d",arr[i].id);
+		Dprintf("\nGender=%c",arr[i].gender);
+
+	}
+}
+
+void Editpatient(void)
+{
+	u32 id,i,index=500;
+	u32 count=count_patient();
+	while(1)
+	{
+		Dprintf("\nEnter the patient id: ");
+		scanf("%d",&id);
+		for(i=0;i<count;i++)
+		{
+			if(arr[i].id==id)
+			{
+				index=i;
+				break;
+			}
+		}
+		if(index!=500)
+		{
+			break;
+		}
+		else
+		{
+			Dprintf("\nThis id doesn't exist, Try again");
+		}
+	}
+
+	Dprintf("\nEnter the patient name: ");
+	scanf("%s",arr[index].name);
+	while(1)
+	{
+		Dprintf("\nEnter the patient id: ");
+		scanf("%d",&id);
+		for( i=0;i<count;i++)
+		{
+			if(arr[i].id == id)
+			{
+				Dprintf("\nThis id is already used try another one");
+				break;
+			}
+		}
+		if(i==count)
+		{
+			arr[index].id=id;
+			break;
+		}
+
+	}
+	Dprintf("\nEnter the patient gender: ");
+	scanf("%c",&arr[index].gender);
+	Dprintf("\nEnter the patient age: ");
+	scanf("%d",&arr[index].age);
+
+
+}
+void Reserveslot(void)
+{
+	u32 i,check,slotno,id,count;
+	Dprintf("\n\tAvailable slots");
+	for(i=0;i<5;i++)
+	{
+		check=1;
+		for(u32 j=0;j<5;j++)
+		{
+			if(slot_arr[i].slot_num==forbidden_slot[j])
+			{
+				check=0;
+				break;
+			}
+
+		}
+		if(check==0)
+			continue;
+		Dprintf("\nslot no %d: %s",slot_arr[i].slot_num,slot_arr[i].name);
+	}
+	check=1;
+	while(check)
+	{
+		int i;
+		Dprintf("\nChoose slot no: ");
+		scanf("%d",&slotno);
+		for(i=0;i<5;i++)
+		{
+			if(slotno==forbidden_slot[i])
+			{
+				Dprintf("\nThis slot is already reserved! Try again");
+				break;
+			}
+		}
+		if(i==5)
+			check=0;
+	}
+
+
+	count=count_patient();
+	check=1;
+	while(check)
+	{
+		u32 i;
+		Dprintf("\nChoose patient id: ");
+		scanf("%d",&id);
+		for(i=0;i<count;i++)
+		{
+			if(arr[i].id==id)
+			{
+				if(arr[i].slot_num!=0)
+				{
+					Dprintf("\nThis Patient has already reserved a slot");
+				}
+				else
+				{
+					arr[i].slot_num=slotno;
+					forbidden_slot[slot_count]=slotno;
+					slot_count++;
+					check=0;
+
+				}
+				break;
+			}
+
+		}
+		if(i==count)
+			Dprintf("\nID not found Try again");
+
+	}
+
+
+
+}
+
+void Cancelslot(void)
+{
+	int x=0;
+}
+
+int count_patient(void)
+{
+	u32 count=0;
+	for(u32 i=0;i<50;i++)
+	{
+		if(arr[i].id == 0)
+		{
+			break;
+		}
+		count++;
+	}
+	//count now has the actual number of patients in the database
+	return count;
+}

@@ -1,0 +1,362 @@
+/*
+ * fun.c
+ *
+ *  Created on: Jul 31, 2024
+ *      Author: DELL
+ */
+#include "fun.h"
+#include "stdio.h"
+#include "STD_Types.h"
+#include "macros.h"
+
+patient arr[max_patient_size]={{"Ahmed",21,'M',1},{"Mai",22,'F',2},{"Saied",19,'M',3}};
+slot slot_arr[slots_number]={{"2pm to 2:30 pm",1},{"2:30 pm to 3 pm",2},{"3 pm to 3:30 pm",3},{"4 pm to 4:30 pm",4},{"4:30 pm to 5 pm",5}};
+u32 forbidden_slot[slots_number],slot_count;
+void adminmode(void)
+{
+	u32 op,check=Loop_True;
+	while(check)
+	{
+		Dprintf("\n\n\tAdmin Function");
+		Dprintf("\n1:Add new patient\n2:Edit Patient Record\n3:Reserve a slot with the doctor\n4:Cancel reservation\n5:View All Patients\n6:Exit")
+		Dprintf("\nEnter a choice: ");
+		scanf("%d",&op);
+		switch(op)
+		{
+		case Add_new_patient:
+		{
+			Addnewpatient();
+		}
+		break;
+		case Edit_Patient:
+		{
+			Editpatient();
+		}
+		break;
+		case Reserve_Slot:
+		{
+			Reserveslot();
+		}
+		break;
+		case Cancel_Slot:
+		{
+			Cancelslot();
+		}
+		break;
+		case View_All_Patients:
+		{
+			ViewAllPatients();
+			break;
+		}
+		case Exit_Admin:
+		{
+			check=0;
+		}
+		break;
+		default:
+		{
+			Dprintf("\nWrong option please try again");
+		}
+		}
+	}
+}
+
+void usermode(void)
+{
+	u32 op,check=Loop_True;
+	while(check)
+	{
+		Dprintf("\n\n\tUser Function");
+		Dprintf("\n1:View Patient Record\n2:View Today's Reservations\n3:Exit")
+		Dprintf("\nEnter a choice: ");
+		scanf("%d",&op);
+		switch(op)
+		{
+		case View_Patient:
+		{
+			ViewPatient();
+			break;
+		}
+		case View_Reservations:
+		{
+			ViewReservations();
+			break;
+		}
+		case Exit_User:
+		{
+			check=0;
+			break;
+		}
+		default:
+			Dprintf("\nWrong Input Try Again");
+		}
+	}
+}
+
+void Addnewpatient(void)
+{
+	u32 count,id,i;
+	count=count_patient();
+	Dprintf("\nEnter the patient name: ");
+	scanf("%s",arr[count].name);
+	while(Loop_True)
+	{
+		Dprintf("\nEnter the patient id: ");
+		scanf("%d",&id);
+		for( i=0;i<count;i++)
+		{
+			if(arr[i].id == id)
+			{
+				Dprintf("\nThis id is already used try another one");
+				break;
+			}
+		}
+		if(i==count)
+		{
+			arr[count].id=id;
+			break;
+		}
+
+	}
+	Dprintf("\nEnter the patient gender: ");
+	scanf("%c",&arr[count].gender);
+	Dprintf("\nEnter the patient age: ");
+	scanf("%d",&arr[count].age);
+}
+
+void Editpatient(void)
+{
+	u32 id,i,index=500;
+	u32 count=count_patient();
+	while(1)
+	{
+		Dprintf("\nEnter the patient id: ");
+		scanf("%d",&id);
+		for(i=Loop_Start;i<count;i++)
+		{
+			if(arr[i].id==id)
+			{
+				index=i;
+				break;
+			}
+		}
+		if(index!=500)
+		{
+			break;
+		}
+		else
+		{
+			Dprintf("\nThis id doesn't exist, Try again");
+		}
+	}
+
+	Dprintf("\nEnter the patient name: ");
+	scanf("%s",arr[index].name);
+	while(Loop_True)
+	{
+		Dprintf("\nEnter the patient id: ");
+		scanf("%d",&id);
+		for( i=Loop_Start;i<count;i++)
+		{
+			if(arr[i].id == id)
+			{
+				Dprintf("\nThis id is already used try another one");
+				break;
+			}
+		}
+		if(i==count)
+		{
+			arr[index].id=id;
+			break;
+		}
+
+	}
+	Dprintf("\nEnter the patient gender: ");
+	scanf("%c",&arr[index].gender);
+	Dprintf("\nEnter the patient age: ");
+	scanf("%d",&arr[index].age);
+
+
+}
+void Reserveslot(void)
+{
+	u32 i,check,slotno,id,count;
+	Dprintf("\n\tAvailable slots");
+	for(i=Loop_Start;i<slots_number;i++)
+	{
+		check=1;
+		for(u32 j=Loop_Start;j<slots_number;j++)
+		{
+			if(slot_arr[i].slot_num==forbidden_slot[j])
+			{
+				check=0;
+				break;
+			}
+
+		}
+		if(check==0)
+			continue;
+		Dprintf("\nslot no %d: %s",slot_arr[i].slot_num,slot_arr[i].name);
+	}
+	check=Loop_True;
+	while(check)
+	{
+		int i;
+		Dprintf("\nChoose slot no: ");
+		scanf("%d",&slotno);
+		for(i=Loop_Start;i<slots_number;i++)
+		{
+			if(slotno==forbidden_slot[i])
+			{
+				Dprintf("\nThis slot is already reserved! Try again");
+				break;
+			}
+		}
+		if(i==5)
+			check=Loop_False;
+	}
+
+	count=count_patient();
+	check=1;
+	while(check)
+	{
+		u32 i;
+		Dprintf("\nChoose patient id: ");
+		scanf("%d",&id);
+		for(i=Loop_Start;i<count;i++)
+		{
+			if(arr[i].id==id)
+			{
+				if(arr[i].slot_num!=Didnt_Reserve)
+				{
+					Dprintf("\nThis Patient has already reserved a slot");
+					break;
+				}
+				else
+				{
+					arr[i].slot_num=slotno;
+					forbidden_slot[slot_count]=slotno;
+					slot_count++;
+					check=Loop_False;
+					break;
+				}
+
+			}
+
+		}
+		if(i==count)
+		{
+			Dprintf("\nID not found Try again");
+		}
+	}
+}
+
+void Cancelslot(void)
+{
+	u32 id,i,index=Not_Found;
+	u32 count=count_patient();
+	while(1)
+	{
+		Dprintf("\nEnter the patient id: ");
+		scanf("%d",&id);
+		for(i=Loop_Start;i<count;i++)
+		{
+			if(arr[i].id==id)
+			{
+				index=i;
+				break;
+			}
+		}
+		if(index!=Not_Found)
+		{
+			break;
+		}
+		else
+		{
+			Dprintf("\nThis id doesn't exist, Try again");
+		}
+	}
+	for (i=Loop_Start;i<slots_number;i++)
+	{
+		if(forbidden_slot[i]==arr[index].slot_num)
+		{
+			forbidden_slot[i]=0;
+			arr[index].slot_num=Cancel;
+			break;
+		}
+	}
+	Dprintf("\nReservation Cancelling is done successfuly")
+
+}
+
+int count_patient(void)
+{
+	u32 count=0;
+	for(u32 i=0;i<50;i++)
+	{
+		if(arr[i].id == 0)
+		{
+			break;
+		}
+		count++;
+	}
+	//count now has the actual number of patients in the database
+	return count;
+}
+
+void ViewPatient(void)
+{
+	u32 id,i,index=500;
+	u32 count=count_patient();
+	while(1)
+	{
+		Dprintf("\nEnter the patient id: ");
+		scanf("%d",&id);
+		for(i=0;i<count;i++)
+		{
+			if(arr[i].id==id)
+			{
+				index=i;
+				break;
+			}
+		}
+		if(index!=500)
+		{
+			break;
+		}
+		else
+		{
+			Dprintf("\nThis id doesn't exist, Try again");
+		}
+	}
+	Dprintf("\nPatient Name: %s",arr[index].name);
+	Dprintf("\nPatient ID: %d",arr[index].id);
+	Dprintf("\nPatient Age: %d",arr[index].age);
+	Dprintf("\nPatient gender: %c",arr[index].gender);
+}
+
+void ViewReservations(void)
+{
+	u32 count=count_patient(),i;
+	for(i=0;i<count;i++)
+	{
+		if(arr[i].slot_num!=0)
+		{
+			Dprintf("\nPatient ID %d Reserved %s",arr[i].id,slot_arr[(arr[i].slot_num)-1].name);
+		}
+	}
+}
+
+void ViewAllPatients()
+{
+	u32 count=count_patient(),i;
+	for(i=0;i<count;i++)
+	{
+		Dprintf("\n\tPatient %d",i+1);
+		Dprintf("\nName=%s",arr[i].name);
+		Dprintf("\nAge=%d",arr[i].age);
+		Dprintf("\nID=%d",arr[i].id);
+		Dprintf("\nGender=%c",arr[i].gender);
+
+	}
+}

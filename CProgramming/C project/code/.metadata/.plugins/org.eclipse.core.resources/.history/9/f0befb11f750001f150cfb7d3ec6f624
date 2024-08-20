@@ -1,0 +1,34 @@
+/*
+ * macros.h
+ *
+ *  Created on: Jul 31, 2024
+ *      Author: DELL
+ */
+
+#ifndef MACROS_H_
+#define MACROS_H_
+#define Dprintf(...); { fflush(stdin);\
+					fflush(stdout);\
+					printf(__VA_ARGS__);\
+					fflush(stdin);\
+					fflush(stdout);}
+
+typedef struct
+{
+	u8 name[50];
+	u32 age;
+	u8 gender;
+	u32 id;
+	u32 slot_num;
+}patient;
+
+typedef struct
+{
+	char name[50];
+	u32 slot_num;
+}slot;
+
+#define slots_number 5
+#define max_patient_size 50
+#define Loop_True 1
+#endif /* MACROS_H_ */

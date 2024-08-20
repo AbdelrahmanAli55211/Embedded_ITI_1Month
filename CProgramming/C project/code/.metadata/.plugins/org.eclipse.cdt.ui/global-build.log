@@ -1,0 +1,309 @@
+Info: Nothing to build for clinic_system
+Info: Nothing to build for clinic_system
+13:04:46 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+..\fun.c: In function 'usermode':
+..\fun.c:61:6: warning: unused variable 'x' [-Wunused-variable]
+  int x=0;
+      ^
+..\fun.c: In function 'Reserveslot':
+..\fun.c:205:3: warning: statement with no effect [-Wunused-value]
+   for(i;i<count;i++)
+   ^~~
+..\fun.c: In function 'Cancelslot':
+..\fun.c:234:6: warning: unused variable 'x' [-Wunused-variable]
+  int x=0;
+      ^
+gcc -o clinic_system.exe fun.o main.o 
+Info: Nothing to build for clinic_system
+14:06:38 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+..\fun.c: In function 'usermode':
+..\fun.c:61:6: warning: unused variable 'x' [-Wunused-variable]
+  int x=0;
+      ^
+..\fun.c: In function 'Reserveslot':
+..\fun.c:205:3: warning: statement with no effect [-Wunused-value]
+   for(i;i<count;i++)
+   ^~~
+..\fun.c: In function 'Cancelslot':
+..\fun.c:234:6: warning: unused variable 'x' [-Wunused-variable]
+  int x=0;
+      ^
+gcc -o clinic_system.exe fun.o main.o 
+14:07:04 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+..\fun.c: In function 'usermode':
+..\fun.c:61:6: warning: unused variable 'x' [-Wunused-variable]
+  int x=0;
+      ^
+..\fun.c: In function 'Cancelslot':
+..\fun.c:234:6: warning: unused variable 'x' [-Wunused-variable]
+  int x=0;
+      ^
+gcc -o clinic_system.exe fun.o main.o 
+Info: Nothing to build for clinic_system
+14:09:53 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+..\fun.c: In function 'usermode':
+..\fun.c:61:6: warning: unused variable 'x' [-Wunused-variable]
+  int x=0;
+      ^
+..\fun.c: In function 'Cancelslot':
+..\fun.c:236:6: warning: unused variable 'x' [-Wunused-variable]
+  int x=0;
+      ^
+gcc -o clinic_system.exe fun.o main.o 
+Info: Nothing to build for clinic_system
+14:13:43 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+..\fun.c: In function 'usermode':
+..\fun.c:61:6: warning: unused variable 'x' [-Wunused-variable]
+  int x=0;
+      ^
+..\fun.c: In function 'Cancelslot':
+..\fun.c:237:6: warning: unused variable 'x' [-Wunused-variable]
+  int x=0;
+      ^
+gcc -o clinic_system.exe fun.o main.o 
+Info: Nothing to build for clinic_system
+14:15:36 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+..\fun.c: In function 'usermode':
+..\fun.c:61:6: warning: unused variable 'x' [-Wunused-variable]
+  int x=0;
+      ^
+..\fun.c: In function 'Cancelslot':
+..\fun.c:239:6: warning: unused variable 'x' [-Wunused-variable]
+  int x=0;
+      ^
+gcc -o clinic_system.exe fun.o main.o 
+Info: Nothing to build for clinic_system
+14:17:16 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+..\fun.c: In function 'usermode':
+..\fun.c:61:6: warning: unused variable 'x' [-Wunused-variable]
+  int x=0;
+      ^
+..\fun.c: In function 'Reserveslot':
+..\fun.c:222:6: error: expected ';' before 'break'
+      break;
+      ^~~~~
+..\fun.c: In function 'Cancelslot':
+..\fun.c:239:6: warning: unused variable 'x' [-Wunused-variable]
+  int x=0;
+      ^
+14:17:18 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+..\fun.c: In function 'usermode':
+..\fun.c:61:6: warning: unused variable 'x' [-Wunused-variable]
+  int x=0;
+      ^
+..\fun.c: In function 'Reserveslot':
+..\fun.c:222:6: error: expected ';' before 'break'
+      break;
+      ^~~~~
+..\fun.c: In function 'Cancelslot':
+..\fun.c:239:6: warning: unused variable 'x' [-Wunused-variable]
+  int x=0;
+      ^
+14:18:41 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+..\fun.c: In function 'usermode':
+..\fun.c:61:6: warning: unused variable 'x' [-Wunused-variable]
+  int x=0;
+      ^
+..\fun.c: In function 'Cancelslot':
+..\fun.c:238:6: warning: unused variable 'x' [-Wunused-variable]
+  int x=0;
+      ^
+gcc -o clinic_system.exe fun.o main.o 
+Info: Nothing to build for clinic_system
+Info: Nothing to build for clinic_system
+14:20:00 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+..\fun.c: In function 'usermode':
+..\fun.c:61:6: warning: unused variable 'x' [-Wunused-variable]
+  int x=0;
+      ^
+..\fun.c: In function 'Cancelslot':
+..\fun.c:235:6: warning: unused variable 'x' [-Wunused-variable]
+  int x=0;
+      ^
+gcc -o clinic_system.exe fun.o main.o 
+20:02:08 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+..\fun.c: In function 'usermode':
+..\fun.c:61:6: warning: unused variable 'x' [-Wunused-variable]
+  int x=0;
+      ^
+gcc -o clinic_system.exe fun.o main.o 
+Info: Nothing to build for clinic_system
+20:09:47 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+..\fun.c: In function 'usermode':
+..\fun.c:72:4: warning: implicit declaration of function 'ViewPatient' [-Wimplicit-function-declaration]
+    ViewPatient();
+    ^~~~~~~~~~~
+..\fun.c:77:4: warning: implicit declaration of function 'ViewReservations' [-Wimplicit-function-declaration]
+    ViewReservations();
+    ^~~~~~~~~~~~~~~~
+gcc -o clinic_system.exe fun.o main.o 
+fun.o: In function `usermode':
+D:\ITI\C project\code\clinic_system\Debug/../fun.c:72: undefined reference to `ViewPatient'
+D:\ITI\C project\code\clinic_system\Debug/../fun.c:77: undefined reference to `ViewReservations'
+collect2.exe: error: ld returned 1 exit status
+20:10:44 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:11:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main(void)
+      ^~~~
+gcc -o clinic_system.exe fun.o main.o 
+Info: Nothing to build for clinic_system
+20:11:54 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+gcc -o clinic_system.exe fun.o main.o 
+Info: Nothing to build for clinic_system
+20:16:11 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+gcc -o clinic_system.exe fun.o main.o 
+Info: Nothing to build for clinic_system
+Info: Nothing to build for clinic_system
+20:18:50 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+gcc -o clinic_system.exe fun.o main.o 
+Info: Nothing to build for clinic_system
+20:20:40 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+gcc -o clinic_system.exe fun.o main.o 
+Info: Nothing to build for clinic_system
+Info: Nothing to build for clinic_system
+20:29:18 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+In file included from ..\fun.c:10:0:
+..\fun.c: In function 'ViewReservations':
+..\fun.c:351:12: warning: format '%s' expects argument of type 'char *', but argument 3 has type 'slot {aka struct <anonymous>}' [-Wformat=]
+    Dprintf("\nPatient ID %d Reserved %s",arr[i].id,slot_arr[(arr[i].slot_num)-1]);
+            ^
+..\macros.h:12:13: note: in definition of macro 'Dprintf'
+      printf(__VA_ARGS__);\
+             ^~~~~~~~~~~
+gcc -o clinic_system.exe fun.o main.o 
+20:30:00 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+gcc -o clinic_system.exe fun.o main.o 
+Info: Nothing to build for clinic_system
+20:31:28 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:11:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main(void)
+      ^~~~
+gcc -o clinic_system.exe fun.o main.o 
+Info: Nothing to build for clinic_system
+20:35:55 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+..\fun.c: In function 'Addnewpatient':
+..\fun.c:121:2: warning: implicit declaration of function 'ViewAllPatients' [-Wimplicit-function-declaration]
+  ViewAllPatients();
+  ^~~~~~~~~~~~~~~
+..\fun.c: At top level:
+..\fun.c:348:6: warning: conflicting types for 'ViewAllPatients'
+ void ViewAllPatients()
+      ^~~~~~~~~~~~~~~
+..\fun.c:121:2: note: previous implicit declaration of 'ViewAllPatients' was here
+  ViewAllPatients();
+  ^~~~~~~~~~~~~~~
+gcc -o clinic_system.exe fun.o main.o 
+Info: Nothing to build for clinic_system
+Info: Nothing to build for clinic_system
+20:37:23 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+..\fun.c: In function 'adminmode':
+..\fun.c:48:4: warning: implicit declaration of function 'ViewAllPatients' [-Wimplicit-function-declaration]
+    ViewAllPatients();
+    ^~~~~~~~~~~~~~~
+..\fun.c: At top level:
+..\fun.c:352:6: warning: conflicting types for 'ViewAllPatients'
+ void ViewAllPatients()
+      ^~~~~~~~~~~~~~~
+..\fun.c:48:4: note: previous implicit declaration of 'ViewAllPatients' was here
+    ViewAllPatients();
+    ^~~~~~~~~~~~~~~
+gcc -o clinic_system.exe fun.o main.o 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file clinic_system.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:37:51 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -o clinic_system.exe fun.o main.o 
+Info: Nothing to build for clinic_system
+20:39:00 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:11:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main(void)
+      ^~~~
+gcc -o clinic_system.exe fun.o main.o 
+20:39:13 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+..\fun.c: In function 'adminmode':
+..\fun.c:48:4: warning: implicit declaration of function 'ViewAllPatients' [-Wimplicit-function-declaration]
+    ViewAllPatients();
+    ^~~~~~~~~~~~~~~
+..\fun.c: At top level:
+..\fun.c:351:6: warning: conflicting types for 'ViewAllPatients'
+ void ViewAllPatients()
+      ^~~~~~~~~~~~~~~
+..\fun.c:48:4: note: previous implicit declaration of 'ViewAllPatients' was here
+    ViewAllPatients();
+    ^~~~~~~~~~~~~~~
+gcc -o clinic_system.exe fun.o main.o 
+20:39:40 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:11:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main(void)
+      ^~~~
+gcc -o clinic_system.exe fun.o main.o 
+Info: Nothing to build for clinic_system
+20:41:15 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o clinic_system.exe fun.o main.o 
+21:04:21 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+gcc -o clinic_system.exe fun.o main.o 
+Info: Nothing to build for clinic_system
+21:09:03 **** Incremental Build of configuration Debug for project clinic_system ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o fun.o "..\\fun.c" 
+gcc -o clinic_system.exe fun.o main.o 
+Info: Nothing to build for clinic_system
+Info: Nothing to build for clinic_system
+Info: Nothing to build for clinic_system

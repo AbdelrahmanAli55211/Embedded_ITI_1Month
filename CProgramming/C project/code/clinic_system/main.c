@@ -1,0 +1,70 @@
+/*
+ * main.c
+ *
+ *  Created on: Jul 31, 2024
+ *      Author: DELL
+ */
+#include "stdio.h"
+#include "STD_Types.h"
+#include "fun.h"
+#include "macros.h"
+int main(void)
+{
+	while(1)
+	{
+	u32 op1,check=0,check2=1,pass,trials=0;
+	Dprintf("\n=======================");
+	Dprintf("\t\nWelcome to our Clinic System");
+	Dprintf("\n1:Admin Mode\n2:User Mode\n3:Exit");
+	Dprintf("\nEnter an option: ");
+	scanf("%d",&op1);
+	switch(op1)
+	{
+	case 1:
+	{
+
+		while(check2)
+		{
+			Dprintf("\nEnter the password: ");
+			scanf("%d",&pass);
+			if (pass==1234)
+			{
+				adminmode();
+				check2=0;
+			}
+			else
+			{
+				if(trials!=3)
+				{
+					Dprintf("\nWrong option Please Try again");
+					trials+=1;
+				}
+				else
+				{
+					check2=0;
+					check=0;
+				}
+			}
+		}
+
+	}
+	break;
+	case 2:
+	{
+		usermode();
+		break;
+	}
+	case 3:
+	{
+		check=1;
+	}
+	break;
+	default:
+		Dprintf("\nWrong option please try again");
+	}
+	if(check==1)
+		break;
+	}
+	return 0;
+}
+
